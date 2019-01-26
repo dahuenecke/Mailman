@@ -29,6 +29,9 @@ namespace Mailman
         
         public async Task SendEmailsAsync(IEnumerable<string> recipients, string subject, string message)
         {
+            Email email = new Email(recipients, subject, message);
+            if(!email.Validation.IsValid) throw new ArgumentException(email.Validation.ToString("~"));
+
             try
             {
                 IEnumerable<MimeMessage> emails = recipients.Select(r => CreateMessage(r, subject, message));
@@ -39,7 +42,7 @@ namespace Mailman
                 throw new Exception(ex.Message);
             }
         }
-        
+
         private MimeMessage CreateMessage(string recipient, string subject, string message)
         {
             var email = new MimeMessage();
