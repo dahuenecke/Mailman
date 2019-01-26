@@ -3,10 +3,9 @@
     <Files>
       <File FileName="Mailman/EmailConfig.cs" Line="13" Column="49" />
       <File FileName="Mailman/IEmailService.cs" Line="8" Column="11" />
-      <File FileName="Mailman/EmailService.cs" Line="4" Column="30" />
+      <File FileName="Mailman/EmailService.cs" Line="45" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Mailman FirstBuild="True" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
