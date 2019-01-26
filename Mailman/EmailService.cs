@@ -6,6 +6,8 @@ using MimeKit;
 using MailKit.Net.Smtp;
 using MimeKit.Text;
 using Microsoft.Extensions.Options;
+using System.Collections.Generic;
+using System.Linq;
 
 // Source: https://www.codeproject.com/Articles/1166364/%2FArticles%2F1166364%2FSend-email-with-Net-Core-using-Dependency-Injectio
 
@@ -13,36 +15,49 @@ namespace Mailman
 {
     public class EmailService : IEmailService
     {
-        private readonly EmailConfig _config;
+        private readonly IEmailConfig _config;
 
-        public EmailService(IOptions<EmailConfig> config)
+        public EmailService(IEmailConfig config)
         {
-            _config = config.Value;
+            _config = config;
         }
 
         public async Task SendEmailAsync(string recipient, string subject, string message)
         {
-            try
-            {
-                var emailMessage = new MimeMessage();
-                emailMessage.From.Add(new MailboxAddress(_config.FromName, _config.FromAddress));
-                emailMessage.To.Add(new MailboxAddress("", recipient));
-                emailMessage.Subject = subject;
-                emailMessage.Body = new TextPart(TextFormat.Html) { Text = message };
+            await SendEmailsAsync(new List<string> { recipient }, subject, message);
+        }
+        public async Task SendEmailsAsync(IEnumerable<string> recipients, string subject, string message)
+        {
+           try
+           {
+               IEnumerable<MimeMessage> emails = recipients.Select(r => CreateMessage(r, subject, message));
+               await SendAsync(emails);
+           } 
+           catch (Exception ex)
+           {
+               throw new Exception(ex.Message);
+           }
+        }
+        private MimeMessage CreateMessage(string recipient, string subject, string message) 
+        {
+            var email = new MimeMessage();
+            email.From.Add(new MailboxAddress(_config.FromName, _config.FromAddress));
+            email.Subject = subject;
+            email.Body = new TextPart(TextFormat.Html) { Text = message };
+            email.To.Add(new MailboxAddress("", recipient));
+            return email; 
+        }
 
-                using(var client = new SmtpClient())
-                {
-                    client.LocalDomain = _config.LocalDomain;
-
-                    await client.ConnectAsync(_config.MailServerAddress, Convert.ToInt32(_config.MailServerPort), SecureSocketOptions.Auto).ConfigureAwait(false);
-                    await client.AuthenticateAsync(new NetworkCredential(_config.UserId, _config.UserPassword));
-                    await client.SendAsync(emailMessage).ConfigureAwait(false);
-                    await client.DisconnectAsync(true).ConfigureAwait(false);
-                }
-            }
-            catch (Exception ex)
+        private async Task SendAsync(IEnumerable<MimeMessage> emails)
+        {
+            using(var client = new SmtpClient())
             {
-                throw new Exception(ex.Message);
+                client.LocalDomain = _config.LocalDomain;
+
+                await client.ConnectAsync(_config.MailServerAddress, Convert.ToInt32(_config.MailServerPort), SecureSocketOptions.Auto).ConfigureAwait(false);
+                await client.AuthenticateAsync(new NetworkCredential(_config.UserId, _config.UserPassword));
+                await Task.WhenAll(emails.Select(email => client.SendAsync(email)));
+                await client.DisconnectAsync(true).ConfigureAwait(false);
             }
         }
     }
