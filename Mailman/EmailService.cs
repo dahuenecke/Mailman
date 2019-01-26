@@ -26,31 +26,33 @@ namespace Mailman
         {
             await SendEmailsAsync(new List<string> { recipient }, subject, message);
         }
+        
         public async Task SendEmailsAsync(IEnumerable<string> recipients, string subject, string message)
         {
-           try
-           {
-               IEnumerable<MimeMessage> emails = recipients.Select(r => CreateMessage(r, subject, message));
-               await SendAsync(emails);
-           } 
-           catch (Exception ex)
-           {
-               throw new Exception(ex.Message);
-           }
+            try
+            {
+                IEnumerable<MimeMessage> emails = recipients.Select(r => CreateMessage(r, subject, message));
+                await SendAsync(emails);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
-        private MimeMessage CreateMessage(string recipient, string subject, string message) 
+        
+        private MimeMessage CreateMessage(string recipient, string subject, string message)
         {
             var email = new MimeMessage();
             email.From.Add(new MailboxAddress(_config.FromName, _config.FromAddress));
             email.Subject = subject;
             email.Body = new TextPart(TextFormat.Html) { Text = message };
             email.To.Add(new MailboxAddress("", recipient));
-            return email; 
+            return email;
         }
 
         private async Task SendAsync(IEnumerable<MimeMessage> emails)
         {
-            using(var client = new SmtpClient())
+            using (var client = new SmtpClient())
             {
                 client.LocalDomain = _config.LocalDomain;
 
