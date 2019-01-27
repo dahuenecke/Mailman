@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Mailman.Extensions
 {
-    public static class EmailExtensions
+    public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddMailman(this IServiceCollection services, IEmailConfig configuration)
         {
