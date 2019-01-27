@@ -1,6 +1,7 @@
 using System;
+using FluentValidation.Results;
 
-namespace Mailman 
+namespace Mailman
 {
     public interface IEmailConfig
     {
@@ -11,5 +12,6 @@ namespace Mailman
         string MailServerPort { get; set; }
         string UserId { get; set; }
         string UserPassword { get; set; }
+        ValidationResult Validation { get; }
     }
 }

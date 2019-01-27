@@ -8,6 +8,8 @@ using MimeKit.Text;
 using Microsoft.Extensions.Options;
 using System.Collections.Generic;
 using System.Linq;
+using Mailman.Validation;
+using FluentValidation.Results;
 
 // Source: https://www.codeproject.com/Articles/1166364/%2FArticles%2F1166364%2FSend-email-with-Net-Core-using-Dependency-Injectio
 
@@ -16,10 +18,12 @@ namespace Mailman
     public class EmailService : IEmailService
     {
         private readonly IEmailConfig _config;
+        private readonly ConfigValidator _configValidator = new ConfigValidator();
 
         public EmailService(IEmailConfig config)
         {
             _config = config;
+            IsValidConfig();
         }
 
         public async Task SendEmailAsync(string recipient, string subject, string message)
@@ -29,8 +33,7 @@ namespace Mailman
         
         public async Task SendEmailsAsync(IEnumerable<string> recipients, string subject, string message)
         {
-            Email email = new Email(recipients, subject, message);
-            if(!email.Validation.IsValid) throw new ArgumentException(email.Validation.ToString("~"));
+            IsValidEmail(recipients, subject, message);
 
             try
             {
@@ -64,6 +67,18 @@ namespace Mailman
                 await Task.WhenAll(emails.Select(email => client.SendAsync(email)));
                 await client.DisconnectAsync(true).ConfigureAwait(false);
             }
+        }
+
+        private void IsValidConfig()
+        {
+            ValidationResult validation = _configValidator.Validate(_config);
+            if(!validation.IsValid) throw new ArgumentException(validation.ToString("~"));
+        }
+
+        private void IsValidEmail(IEnumerable<string> recipients, string subject, string message)
+        {
+            IEmail email = new Email(recipients, subject, message);
+            if(!email.Validation.IsValid) throw new ArgumentException(email.Validation.ToString("~"));
         }
     }
 }

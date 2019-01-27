@@ -20,7 +20,7 @@ namespace Mailman
         public string Subject { get; set; }
         public string Message { get; set; }
 
-        public ValidationResult Validation { get; set; }
+        public ValidationResult Validation { get; private set; }
 
         private void Validate()
         {
