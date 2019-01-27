@@ -11,7 +11,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Dan Huenecke** *
+* **Dan Huenecke**
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
