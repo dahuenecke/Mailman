@@ -16,7 +16,9 @@ enter the following command:
 
 ## Using Mailman
 
-### appsettings.json
+### Configuration
+
+Add settings to appsettings.json
 ```
 "Email": {
     "FromName": "<fromname>",
@@ -32,6 +34,41 @@ enter the following command:
   }
 ```
 
+### Registration
+
+Register Mailman inside of startup.cs
+
+```csharp
+public void ConfigureServices(IServiceCollection services)
+{
+  ...
+  // Register email service 
+  services.AddMailman(Configuration.GetSection("Email"));
+  ...
+}
+```
+
+### Using Mailman
+
+Inject Mailman service into controller and send emails
+
+```csharp
+public class HomeController : Controller
+{
+    private readonly IEmailService _emailService;
+
+    public HomeController(IEmailService emailService)
+    {
+        _emailService = emailService;
+    }
+    
+    [HttpGet]
+    public async Task Index()
+    {
+        await _emailService.SendEmailAsync(recipient, subject, message);
+    }
+ }
+```
 
 ## Contributing
 
