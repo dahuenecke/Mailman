@@ -1,5 +1,5 @@
 # Mailman
-The easiest way to send email from .NET Core 
+The easiest way to send email from .NET Core<br/> 
 A wrapper around the MailKit SMTP client (https://github.com/jstedfast/MailKit)
 
 ## Getting Started
