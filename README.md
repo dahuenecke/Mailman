@@ -15,7 +15,23 @@ enter the following command:
     Install-Package MailKit
 
 ## Using Mailman
-End with an example of getting some data out of the system or using it for a little demo
+
+### appsettings.json
+```
+"Email": {
+    "FromName": "<fromname>",
+    "FromAddress": "<fromaddress>",
+
+    "LocalDomain": "<localdomain>",
+
+    "MailServerAddress": "<mailserveraddress>",
+    "MailServerPort": "<mailserverport>",
+
+    "UserId": "<userid>",
+    "UserPassword": "<userpasword>"
+  }
+```
+
 
 ## Contributing
 
