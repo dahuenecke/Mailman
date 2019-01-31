@@ -49,7 +49,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### Using Mailman
 
-Inject Mailman service into controller and send emails
+Inject Mailman service into controller |> send emails
 
 ```csharp
 public class HomeController : Controller
