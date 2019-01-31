@@ -9,9 +9,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 The easiest way to install Mailman is via [NuGet](https://www.nuget.org/packages/Mailman/).
 
-```
-Install-Package MailKit
-```
+In Visual Studio's [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console),
+enter the following command:
+
+    Install-Package MailKit
 
 ## Using Mailman
 End with an example of getting some data out of the system or using it for a little demo
