@@ -42,7 +42,6 @@ Register Mailman inside of startup.cs
 public void ConfigureServices(IServiceCollection services)
 {
   ...
-  // Register email service 
   services.AddMailman(Configuration.GetSection("Email"));
   ...
 }
