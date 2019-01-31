@@ -1,5 +1,6 @@
 # Mailman
 The easiest way to send email from .NET Core 
+A wrapper around the MailKit SMTP client (https://github.com/jstedfast/MailKit)
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
