@@ -1,9 +1,8 @@
-/Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.csprojAssemblyReference.cache
-/Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.csproj.CoreCompileInputs.cache
-/Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.AssemblyInfoInputs.cache
-/Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.AssemblyInfo.cs
 /Users/i815722/Source/Repos/Mailman/Mailman/bin/Debug/netcoreapp2.2/Mailman.deps.json
 /Users/i815722/Source/Repos/Mailman/Mailman/bin/Debug/netcoreapp2.2/Mailman.dll
 /Users/i815722/Source/Repos/Mailman/Mailman/bin/Debug/netcoreapp2.2/Mailman.pdb
+/Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.csproj.CoreCompileInputs.cache
+/Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.AssemblyInfoInputs.cache
+/Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.AssemblyInfo.cs
 /Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.dll
 /Users/i815722/Source/Repos/Mailman/Mailman/obj/Debug/netcoreapp2.2/Mailman.pdb

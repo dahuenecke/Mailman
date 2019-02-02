@@ -1,13 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Mailman/EmailService.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mailman/EmailConfig.cs">
     <Files>
-      <File FileName="Mailman/EmailConfig.cs" Line="13" Column="49" />
-      <File FileName="Mailman/IEmailService.cs" Line="8" Column="11" />
-      <File FileName="Mailman/EmailService.cs" Line="45" Column="49" />
+      <File FileName="Mailman/EmailConfig.cs" Line="13" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
