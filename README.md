@@ -14,7 +14,8 @@ enter the following command:
 
     Install-Package Mailman
 
-In .NET CLI, enter the following command:
+In [.NET CLI](https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x),
+enter the following command:
 
     dotnet add package Mailman
 
