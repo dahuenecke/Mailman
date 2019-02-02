@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
 
 namespace Mailman.Net.Smtp.Extensions
 {
@@ -20,6 +21,16 @@ namespace Mailman.Net.Smtp.Extensions
 
             IEmailConfig config = configuration();
             return services.AddTransient<IMailman>(provider => new Mailman(config));
+        }
+
+        public static IServiceCollection AddMailman(this IServiceCollection services, IConfiguration configuration)
+        {
+           if (services == null) throw new ArgumentNullException(nameof(services));
+           if (configuration == null) throw new ArgumentNullException(nameof(configuration)); 
+
+           var config = new EmailConfig();
+           configuration.Bind(config);
+           return services.AddTransient<IMailman>(provider => new Mailman(config));
         }
     }
 }
