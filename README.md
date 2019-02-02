@@ -12,7 +12,7 @@ The easiest way to install Mailman is via [NuGet](https://www.nuget.org/packages
 In Visual Studio's [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console),
 enter the following command:
 
-    Install-Package MailKit
+    Install-Package Mailman
 
 ## Using Mailman
 
