@@ -54,17 +54,17 @@ Inject Mailman service into controller |> send emails
 ```csharp
 public class HomeController : Controller
 {
-    private readonly IEmailService _emailService;
+    private readonly IMailman _mailman;
 
-    public HomeController(IEmailService emailService)
+    public HomeController(IMailman mailman)
     {
-        _emailService = emailService;
+        _mailman = mailman;
     }
     
     [HttpGet]
     public async Task Index()
     {
-        await _emailService.SendEmailAsync(recipient, subject, message);
+        await _mailman.SendEmailAsync(recipient, subject, message);
     }
  }
 ```
