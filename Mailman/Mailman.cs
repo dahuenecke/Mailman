@@ -11,8 +11,6 @@ using System.Linq;
 using Mailman.Net.Smtp.Validation;
 using FluentValidation.Results;
 
-// Source: https://www.codeproject.com/Articles/1166364/%2FArticles%2F1166364%2FSend-email-with-Net-Core-using-Dependency-Injectio
-
 namespace Mailman.Net.Smtp
 {
     public class Mailman : IMailman
