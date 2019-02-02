@@ -1,8 +1,8 @@
 ﻿using System;
 using FluentValidation.Results;
-using Mailman.Validation;
+using Mailman.Net.Smtp.Validation;
 
-namespace Mailman
+namespace Mailman.Net.Smtp
 {
     public class EmailConfig : IEmailConfig
     {

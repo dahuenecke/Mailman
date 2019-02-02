@@ -1,7 +1,7 @@
 using System;
 using FluentValidation.Results;
 
-namespace Mailman
+namespace Mailman.Net.Smtp
 {
     public interface IEmailConfig
     {

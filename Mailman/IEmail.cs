@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using FluentValidation.Results;
 
-namespace Mailman
+namespace Mailman.Net.Smtp
 {
     public interface IEmail
     {

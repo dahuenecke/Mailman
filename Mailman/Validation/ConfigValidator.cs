@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace Mailman.Validation
+namespace Mailman.Net.Smtp.Validation
 {
     public class ConfigValidator : AbstractValidator<IEmailConfig>
     {
