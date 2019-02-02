@@ -14,6 +14,10 @@ enter the following command:
 
     Install-Package Mailman
 
+In .NET CLI, enter the following command:
+
+    dotnet add package Mailman
+
 ## Using Mailman
 
 ### Configuration
