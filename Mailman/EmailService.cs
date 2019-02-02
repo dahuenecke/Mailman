@@ -26,18 +26,18 @@ namespace Mailman
             IsValidConfig();
         }
 
-        public async Task SendEmailAsync(string recipient, string subject, string message)
+        public async Task SendEmailAsync(string recipient, string subject, string message, bool isHtml = false)
         {
             await SendEmailsAsync(new List<string> { recipient }, subject, message);
         }
         
-        public async Task SendEmailsAsync(IEnumerable<string> recipients, string subject, string message)
+        public async Task SendEmailsAsync(IEnumerable<string> recipients, string subject, string message, bool isHtml = false)
         {
             IsValidEmail(recipients, subject, message);
 
             try
             {
-                IEnumerable<MimeMessage> emails = recipients.Select(r => CreateMessage(r, subject, message));
+                IEnumerable<MimeMessage> emails = recipients.Select(r => CreateMessage(r, subject, message, isHtml));
                 await SendAsync(emails);
             }
             catch (Exception ex)
@@ -46,13 +46,21 @@ namespace Mailman
             }
         }
 
-        private MimeMessage CreateMessage(string recipient, string subject, string message)
+        private MimeMessage CreateMessage(string recipient, string subject, string message, bool isHtml)
         {
             var email = new MimeMessage();
             email.From.Add(new MailboxAddress(_config.FromName, _config.FromAddress));
             email.Subject = subject;
-            email.Body = new TextPart(TextFormat.Html) { Text = message };
             email.To.Add(new MailboxAddress("", recipient));
+            
+            var bodyBuilder = new BodyBuilder();
+            if (isHtml)
+                bodyBuilder.HtmlBody =  message;
+            else
+                bodyBuilder.TextBody = message;
+            
+            email.Body = bodyBuilder.ToMessageBody();
+
             return email;
         }
 
