@@ -1576,7 +1576,7 @@
         "runtime": {
           "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "4.0.4.0",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "4.0.0.0"
           }
         }
       },
@@ -2087,7 +2087,7 @@
     "MailKit/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-0PAIP7yRcHWvZMFrAsY6ZjKiMrUIj+FnEC6wU9PML1elk0LsiDPmPnQj/8ye8wm2NXEcrEzq+fp61WRq1ESyrg==",
+      "sha512": "sha512-eRzHd5EN+ST3hGUED4QH44nINxnALQbFozPDVlZODydIWgYO19+m6/txvbV69qF4cpjXwlxO7ivpIcB+/97X2A==",
       "path": "mailkit/2.0.1",
       "hashPath": "mailkit.2.0.1.nupkg.sha512"
     },
@@ -2577,14 +2577,14 @@
     "MimeKit/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Fj9S+IqLcYukHLSWYTcDnOUoKwYEJNf1eWs1SvS2OonmOcURdHhGK9lD9Yg3utsIoMwdk9Htahwcad3tZcMgQQ==",
+      "sha512": "sha512-b71yNg43rxCjg9YJyHdHIYLLken8cwg05AcqzM+paLkqD6hbWCJ8zfcb7b0g0kCLfcIqvv9meHzUWJpEciyC9Q==",
       "path": "mimekit/2.0.1",
       "hashPath": "mimekit.2.0.1.nupkg.sha512"
     },
     "NETCore.MailKit/2.0.2": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-uW+JIrdGWfi7D53GMLQxMaUyiHRq91ZlINVO7eTJy3teICDAf9m89JsWhMAfzM/0DaqzMcktLubEXHVocYpVjA==",
+      "sha512": "sha512-Hs5PBogh0AGAbitU4BlTbDg7tG71Q+HL8H0V60TDxGypXV1FFQ7EkRE/lcIz5CwTjonMKH4H0xXk/9jmuGFvig==",
       "path": "netcore.mailkit/2.0.2",
       "hashPath": "netcore.mailkit.2.0.2.nupkg.sha512"
     },
@@ -2605,7 +2605,7 @@
     "Portable.BouncyCastle/1.8.1.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Gas5/eVCmh5CzivrSWq/n4LoQc7x0EzQ5WDJpj6yP5+fKBczVZrtoqGXPwApvRXC9Brcr0DnNAtMPvXxNH/N2w==",
+      "sha512": "sha512-1jUpszv0ETm+hl78HKnYgY3wPzt6qRtjxaPENNrGCuB8nondbR/j75WAKdd6sxXzOzBcX07WMZhZEYc4s5jVWg==",
       "path": "portable.bouncycastle/1.8.1.3",
       "hashPath": "portable.bouncycastle.1.8.1.3.nupkg.sha512"
     },
@@ -2780,7 +2780,7 @@
     "System.Data.Common/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-OGX4ifHI67s/2KRrXGMmEjmszCptbhWS4BieBdiBPl/8pn0A1xPMx0Gn0dKK0zKtEaelYNh5M7M5lCZL0EA4eA==",
+      "sha512": "sha512-lm6E3T5u7BOuEH0u18JpbJHxBfOJPuCyl4Kg1RH10ktYLp5uEEE1xKrHW56/We4SnZpGAuCc9N0MJpSDhTHZGQ==",
       "path": "system.data.common/4.3.0",
       "hashPath": "system.data.common.4.3.0.nupkg.sha512"
     },
@@ -2920,7 +2920,7 @@
     "System.Net.NetworkInformation/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MKLDZXuBZOS348egaxkMgwSUHIIhykVf0pudpfSdzjKmkRpVCzqkpysPHHp8HfckYAhuXRM+UgxWPgFTHF8Trg==",
+      "sha512": "sha512-zNVmWVry0pAu7lcrRBhwwU96WUdbsrGL3azyzsbXmVNptae1+Za+UgOe9Z6s8iaWhPn7/l4wQqhC56HZWq7tkg==",
       "path": "system.net.networkinformation/4.3.0",
       "hashPath": "system.net.networkinformation.4.3.0.nupkg.sha512"
     },
@@ -3214,7 +3214,7 @@
     "System.Threading.Overlapped/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-JWEtWIoYBHzMmgt2I/1e4FFG6veDL4yzA1Y7iuEY2G+GyZyrzqx/GQlM92M+d81D1cH2dp2KRhbZdQebn8Q+RA==",
+      "sha512": "sha512-m3HQ2dPiX/DSTpf+yJt8B0c+SRvzfqAJKx+QDWi+VLhz8svLT23MVjEOHPF/KiSLeArKU/iHescrbLd3yVgyNg==",
       "path": "system.threading.overlapped/4.3.0",
       "hashPath": "system.threading.overlapped.4.3.0.nupkg.sha512"
     },

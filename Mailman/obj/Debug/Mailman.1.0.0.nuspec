@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Mailman</id>
+    <version>1.0.0</version>
+    <authors>Dan Huenecke</authors>
+    <owners>Dan Huenecke</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.2">
+        <dependency id="FluentValidation.AspNetCore" version="8.1.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Configuration" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.DependencyInjection" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Options.ConfigurationExtensions" version="2.2.0" exclude="Build,Analyzers" />
+        <dependency id="NETCore.MailKit" version="2.0.2" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="/Users/i815722/Source/Repos/Mailman/Mailman/bin/Debug/netcoreapp2.2/Mailman.dll" target="lib/netcoreapp2.2/Mailman.dll" />
+  </files>
+</package>

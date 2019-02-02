@@ -4,6 +4,7 @@
     <PackageId>Mailman</PackageId>
     <Version>1.0.0</Version>
     <Authors>Dan Huenecke</Authors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="NETCore.MailKit" Version="2.0.2" />
