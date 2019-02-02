@@ -23,12 +23,9 @@ Add settings to appsettings.json
 "Email": {
     "FromName": "<fromname>",
     "FromAddress": "<fromaddress>",
-
     "LocalDomain": "<localdomain>",
-
     "MailServerAddress": "<mailserveraddress>",
     "MailServerPort": "<mailserverport>",
-
     "UserId": "<userid>",
     "UserPassword": "<userpasword>"
   }
