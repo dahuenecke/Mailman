@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Mailman.Extensions
+namespace Mailman.Net.Smtp.Extensions
 {
     public static class ServiceCollectionExtensions
     {
@@ -10,7 +10,7 @@ namespace Mailman.Extensions
             if (services == null) throw new ArgumentNullException(nameof(services));
             if (configuration == null) throw new ArgumentNullException(nameof(configuration));
 
-            return services.AddTransient<IEmailService>(provider => new EmailService(configuration));
+            return services.AddTransient<IMailman>(provider => new Mailman(configuration));
         }
 
         public static IServiceCollection AddMailman(this IServiceCollection services, Func<IEmailConfig> configuration)
@@ -19,7 +19,7 @@ namespace Mailman.Extensions
             if (configuration == null) throw new ArgumentNullException(nameof(configuration));
 
             IEmailConfig config = configuration();
-            return services.AddTransient<IEmailService>(provider => new EmailService(config));
+            return services.AddTransient<IMailman>(provider => new Mailman(config));
         }
     }
 }

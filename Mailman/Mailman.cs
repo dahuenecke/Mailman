@@ -15,12 +15,12 @@ using FluentValidation.Results;
 
 namespace Mailman
 {
-    public class EmailService : IEmailService
+    public class Mailman : IMailman
     {
         private readonly IEmailConfig _config;
         private readonly ConfigValidator _configValidator = new ConfigValidator();
 
-        public EmailService(IEmailConfig config)
+        public Mailman(IEmailConfig config)
         {
             _config = config;
             IsValidConfig();
@@ -90,52 +90,3 @@ namespace Mailman
         }
     }
 }
-
-/*
-Config.cs
-
-"Email": {
-    "FromName": "<fromname>",
-    "FromAddress": "<fromaddress>",
-
-    "LocalDomain": "<localdomain>",
-
-    "MailServerAddress": "<mailserveraddress>",
-    "MailServerPort": "<mailserverport>",
-
-    "UserId": "<userid>",
-    "UserPassword": "<userpasword>"
-  }
-*/
-
-/*
-Startup.cs
-
-public void ConfigureServices(IServiceCollection services)
-{
-  ...
-  // Read email settings
-  services.Configure<EmailConfig>(Configuration.GetSection("Email"));
-   
-  // Register email service 
-  services.AddTransient<IEmailService, EmailService>();
-  ...
-}
-*/
-
-/*
-Controller DI   
-
-public class HomeController : Controller
-{
-    private readonly IEmailService _emailService;
-
-    public HomeController(IEmailService emailService)
-    {
-        _emailService = emailService;
-    }
-}
-
-await _emailService.SendEmailAsync(recipient, subject, message);
-
-*/
